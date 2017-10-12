@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>The UKB Neale Data Repository</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Jiamao Zheng, Hae Kyung Im">
+        <meta name="description" content="GWAS MetaXcan PredixCan">
+        <link rel="shortcut icon" href="http:/aws.amazon.com/favicon.ico">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="/css/ukb-neale.css">
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"></script>
+        <script src="http://sdk.amazonaws.com/js/aws-sdk-2.0.13.min.js"></script>
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.5.0.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+        <script src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+        <script src="http://cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <script type="text/javascript" src="/js/s3.js"> </script>
+    </head>
+
+    <div class="jumbotron">
+        <div class="container">
+        <br>
+            <h1><center><b>The UKB Neale MetaXcan Data Repository</b></center></h1>
+            <br>
+            <div style="text-align: center;">
+                  <img class="responsive-image" src="img/home-bg1.jpg" alt="ukb-neale gwas">
+            </div> <br>
+
+            <div style="text-align: center;">
+            <a class="btn btn btn-primary" href="http://www.nealelab.is/blog/2017/7/19/rapid-gwas-of-thousands-of-phenotypes-for-337000-samples-in-the-uk-biobank"><span class="lead"><strong> LEARN MORE </strong></span></a>
+            </div>
+        </div>
+    </div>
+
+    <body>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                 <hr> <br>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading clearfix">
+                            <div class="btn-group pull-left">
+                                <div>
+                                    <p>UKB Neale MetaXcan Data Repository Explorer &nbsp;</p>
+                                    <p> </p>
+                                </div>
+                                <div class="pull-left">
+                                    <ul id="breadcrumb" class="btn breadcrumb pull-left">
+                                        <li class="active dropdown">
+                                            <a href="#">&lt;bucket&gt;</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered table-hover table-striped" id="tb-s3objects">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Folder</th>
+                                        <th>Last Modified</th>
+                                        <th>Size</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-s3objects"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="row">
+                <h5>
+                  <font color="black">
+                  <b>Disclaimer</b>: These data are provided "as is", and without any warranty, for scientific and educational use only. If you use or download these data, you acknowledge that that the investigator is in compliance with all applicable state, local, and federal laws or regulations and institutional policies regarding human subjects and genetics research; that secondary distribution of the data without registration by secondary parties is prohibited; and that the investigator will cite the appropriate publication in any communications or publications arising directly or indirectly from these data. Further restrictions may be imposed by the source of the summary statistics data - <a href="http://www.nealelab.is/" target="_blank" onclick="trackOutboundLink('http://www.nealelab.is/'); return false;"> Neale Lab </a>.  
+                  </font>
+                </h5></font>
+                <br><hr />
+            </div>
+        </div>
+        <div class="container">
+          <div class="row">
+              <div class="post-preview">
+                  <h3>How To Explore UKB Neale MetaXcan Data Repository Explorer</h3>
+                <p>
+                  <strong>The UKB Neale MetaXcan Data Repository </strong> hosts MetaXcan results which are analyzed from <a href="https://sites.google.com/broadinstitute.org/ukbbgwasresults/home?authuser=0" target="_blank" onclick="trackOutboundLink('https://sites.google.com/broadinstitute.org/ukbbgwasresults/home?authuser=0'); return false;"> over 2000 phenotype GWAS results </a>provided by<a href="http://www.nealelab.is/" target="_blank" onclick="trackOutboundLink('http://www.nealelab.is/'); return false;"> Neale Lab </a> with the use of <a href="http://predictdb.org" target="_blank" onclick="trackOutboundLink('http://predictdb.org'); return false;">prediction models of expression traits across 44 human tissues (GTEx-V6p-HapMap-2016-09-08.tar.gz)</a>. This repository offers direct <strong>individual</strong>, <strong>phenotype-grouped</strong> and <strong>bulk</strong> download links, and the relevent results can be retrieved by keyword search such as <a href="https://docs.google.com/spreadsheets/d/1b3oGI2lUt57BcuHttWaZotQcI0-mBRPyZihz87Ms_No/edit#gid=1209628142" target="_blank">phenotype name</a> and <a href="https://www.gtexportal.org/home/tissueSummaryPage" target="_blank">GTEx tissue name</a>. 
+                </p>
+              </div>
+              <div class="post-preview">
+                 <h3>Major Tools Used to Generate Data</h3>
+                 <strong> MetaXcan </strong>: An extension of <a href="https://github.com/hakyimlab/PrediXcan" target="_blank" onclick="trackOutboundLink('https://github.com/hakyimlab/PrediXcan'); return false;"> PrediXcan Method </a>, that infers the results of PrediXcan using only summary statistics. <a href="https://github.com/hakyimlab/MetaXcan" target="_blank">Learn more &rarr;</a> <br />
+              </div>
+              <div class="post-preview">
+                    <h3>How To Cite</h3>
+                    <p> If you use UKB Neale MetaXcan Data in your work please cite: </p>
+                    <p><a href="http://biorxiv.org/content/early/2016/03/23/045260">
+                    Integrating tissue specific mechanisms into GWAS summary results.  Alvaro Barbeira, Scott P Dickinson, Jason M Torres, Eric S Torstenson, Jiamao Zheng, Heather E Wheeler, Kaanan P Shah, Todd Edwards, GTEx Consortium, Dan Nicolae, Nancy J Cox, Hae Kyung Im. BioRxiv. 2017. doi: https://doi.org/10.1101/045260.</a></p>
+              </div>
+
+              <div class="post-preview">
+                  <h3>Terms Of Use</h3>
+                  <p> This work is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0" target="_blank"> the Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p><br />
+              </div>
+            </div>
+        </div> 
+        <br><br><br>
+      <div class="footer" role="contentinfo" id="footer">
+      <div class="container">
+      <br>
+      </div>
+      <div class="social">
+    <br>
+          <span>
+            <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fukb-neale.gene2pheno.org">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+         
+            <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fukb-neale.gene2pheno.org">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+         
+            <a href="https://plus.google.com/share?url=https%3A%2F%2Fukb-neale.gene2pheno.org">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+       
+            <a href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fukb-neale.gene2pheno.org">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fukb-neale.gene2pheno.org">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          
+            <a href="mailto:haky@uchicago.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </span>
+        
+    </div> <br>
+   <div class="copyright">
+        <p> <a class="imlab_link" href="http://hakyimlab.org">Im-Lab</a>, Genetic Medicine, Department of Medicine,  The University of Chicago. <a class="back_to_top_link" href="#">Back to top</a> </p>
+   </div>
+        <div class="counter">
+            <!-- Start of StatCounter Code for Default Guide -->
+            <script type="text/javascript">
+            var sc_project=11470902; 
+            var sc_invisible=0; 
+            var sc_security="907831d2"; 
+            var scJsHost = (("https:" == document.location.protocol) ?
+            "https://secure." : "http://www.");
+            document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+            <noscript><div class="statcounter"><a title="Web Analytics"
+            href="http://statcounter.com/" target="_blank"><img
+            class="statcounter"
+            src="//c.statcounter.com/11470902/0/907831d2/0/" alt="Web
+            Analytics"></a></div></noscript>
+            <!-- End of StatCounter Code for Default Guide -->
+        </div>
+        <br>
+      </div>
+    </body>
+</html>
