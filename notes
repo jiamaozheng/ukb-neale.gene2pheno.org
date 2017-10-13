@@ -1,1 +1,1 @@
-aws s3 sync ~/Dropbox/Im_lab/2017/PredictDB-Web/UKB_Neale/UKB_neale_Gene2pheno_v0.1 s3://ukb-neale.gene2pheno.org
+aws s3 sync ~/Dropbox/Im_lab/2017/PredictDB-Web/UKB_Neale/ukb-neale.gene2pheno.org/* s3://ukb-neale.gene2pheno.org
