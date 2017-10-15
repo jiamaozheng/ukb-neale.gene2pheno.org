@@ -201,8 +201,8 @@ $(document).ready(function(){
     }
 
     $('#tb-s3objects').DataTable({
-        iDisplayLength: 50,
-        order: [[1, 'asc'], [0, 'asc']],
+        iDisplayLength: 10,
+        // order: [[1, 'asc'], [0, 'asc']],
         aoColumnDefs: [
             { "aTargets": [ 0 ], "mData": "Key", "mRender": function (data, type, full) { return (type == 'display') ? renderKey(data, type, full) : data; }, "sType": "key" },
             { "aTargets": [ 1 ], "mData": "Key", "mRender": function (data, type, full) { return isfolder(data) ? "" : fullpath2pathname(data); } },
