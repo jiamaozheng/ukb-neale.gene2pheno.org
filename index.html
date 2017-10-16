@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="http://cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/scroller/1.4.3/css/scroller.dataTables.min.css">
         <link rel="stylesheet" href="/css/ukb-neale.css">
         <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -21,19 +22,20 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
         <script src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
         <script src="http://cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <script src="https://cdn.datatables.net/scroller/1.4.3/js/dataTables.scroller.min.js"></script>
         <script type="text/javascript" src="/js/s3.js"> </script>
     </head>
 
     <div class="jumbotron">
         <div class="container">
         <br>
-            <h1><center><b>S-PrediXcan associations based on Neale Lab’s <a class="btn btn btn-primary" href="https://sites.google.com/broadinstitute.org/ukbbgwasresults/home?authuser=0" target="_blank" onclick="trackOutboundLink('https://sites.google.com/broadinstitute.org/ukbbgwasresults/home?authuser=0'); return false;"><span class="lead"><strong> UKB GWAS results </strong></span></a> </b></center></h1>
+            <h1><center><b>S-PrediXcan associations based on Neale Lab’s <a class="btn btn btn-primary" href="https://sites.google.com/broadinstitute.org/ukbbgwasresults/home?authuser=0"><span class="lead"><strong> UKB GWAS results </strong></span></a> </b></center></h1>
             <br>
        <!--      <div style="text-align: center;">
                   <img class="responsive-image" src="img/home-bg1.jpg" alt="ukb-neale gwas">
             </div> <br> -->
             <div style="text-align: center;">
-              <h3> Following Neale Lab’s lead on open science and open data sharing, we are releasing the bulk runs of PrediXcan association using Neale Lab's UKB gwas summary results and <a style="text-decoration: underline; color: white" href="http://predictdb.org" target="_blank" onclick="trackOutboundLink('http://predictdb.org'); return false;">44 tissues models</a> from GTEx V6 p release.</h3> <br>
+              <h3> Following Neale Lab’s lead on open science and open data sharing, we are releasing the bulk runs of PrediXcan association using Neale Lab's UKB gwas summary results and <a style="text-decoration: underline; color: white" href="http://predictdb.org">44 tissues models</a> from GTEx V6 p release.</h3> <br>
             </div>
 
 <!--             <div style="text-align: center;">
@@ -79,17 +81,22 @@
                     </div>
                 </div>
             </div> 
+    </div>
+    <div class="container">
             <div class="row">
+              <div class="col-md-12">
                 <h5>
                   <font color="black">
-                  <b>Disclaimer</b>: These data are provided "as is", and without any warranty, for scientific and educational use only. If you use or download these data, you acknowledge that that the investigator is in compliance with all applicable state, local, and federal laws or regulations and institutional policies regarding human subjects and genetics research; that secondary distribution of the data without registration by secondary parties is prohibited; and that the investigator will cite the appropriate publication in any communications or publications arising directly or indirectly from these data. Further restrictions may be imposed by the source of the summary statistics data - <a href="http://www.nealelab.is/" target="_blank" onclick="trackOutboundLink('http://www.nealelab.is/'); return false;"> Neale Lab </a>.  
+                  <b>Disclaimer</b>: These data are provided "as is", and without any warranty, for scientific and educational use only. If you use or download these data, you acknowledge that that the investigator is in compliance with all applicable state, local, and federal laws or regulations and institutional policies regarding human subjects and genetics research; that secondary distribution of the data without registration by secondary parties is prohibited; and that the investigator will cite the appropriate publication in any communications or publications arising directly or indirectly from these data. Further restrictions may be imposed by the source of the summary statistics data - <a href="http://www.nealelab.is/"); return false;"> Neale Lab </a>.  
                   </font>
-                </h5></font>
-                <br><hr />
+                </h5>
+              </div>
             </div>
-        </div>
-        <div class="container">
+            <hr />
+    </div>
+    <div class="container">
           <div class="row">
+              <div class="col-md-12">
 <!--               <div class="post-preview">
                   <h3>How To Explore UKB Neale MetaXcan Data Repository Explorer</h3>
                 <p>
@@ -103,53 +110,56 @@
               <div class="post-preview">
                     <h3>How To Cite</h3>
                     <p> If you use UKB Neale MetaXcan Data in your work please cite: </p>
-                    <p><a href="http://biorxiv.org/content/early/2016/03/23/045260" target="_blank" onclick="trackOutboundLink('http://biorxiv.org/content/early/2016/03/23/045260'); return false;">
+                    <p><a href="http://biorxiv.org/content/early/2016/03/23/045260">
                     Integrating tissue specific mechanisms into GWAS summary results.  Alvaro Barbeira, Scott P Dickinson, Jason M Torres, Eric S Torstenson, Jiamao Zheng, Heather E Wheeler, Kaanan P Shah, Todd Edwards, GTEx Consortium, Dan Nicolae, Nancy J Cox, Hae Kyung Im. BioRxiv. 2017. doi: https://doi.org/10.1101/045260.</a></p>
               </div>
 
               <div class="post-preview">
                   <h3>Terms Of Use</h3>
-                  <p> This work is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0" target="_blank" onclick="trackOutboundLink('http://creativecommons.org/licenses/by-sa/4.0'); return false;"> the Creative Commons Attribution-ShareAlike 4.0 International License </a>.</p><br />
+                  <p> This work is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0"> the Creative Commons Attribution-ShareAlike 4.0 International License </a>.</p><br />
               </div>
             </div>
-        </div> 
+          </div>
+      </div> 
         <br><br><br>
+
+      <!-- footer -->
       <div class="footer" role="contentinfo" id="footer">
       <div class="container">
       <br>
       </div>
       <div class="social">
-    <br>
+       <br>
           <span>
-            <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fukb-neale.gene2pheno.org" target="_blank" onclick="trackOutboundLink('https://twitter.com/intent/tweet?url=https%3a%2f%2fukb-neale.gene2pheno.org'); return false;">
+            <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fukb-neale.gene2pheno.org">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
               </span>
             </a>
          
-            <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fukb-neale.gene2pheno.org" target="_blank" onclick="trackOutboundLink('https://www.facebook.com/sharer.php?u=https%3a%2f%2fukb-neale.gene2pheno.org'); return false;">
+            <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fukb-neale.gene2pheno.org">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
             </a>
          
-            <a href="https://plus.google.com/share?url=https%3A%2F%2Fukb-neale.gene2pheno.org" target="_blank" onclick="trackOutboundLink('https://plus.google.com/share?url=https%3A%2F%2Fukb-neale.gene2pheno.org'); return false;">
+            <a href="https://plus.google.com/share?url=https%3A%2F%2Fukb-neale.gene2pheno.org">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
               </span>
             </a>
        
-            <a href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fukb-neale.gene2pheno.org" target="_blank" onclick="trackOutboundLink('http://service.weibo.com/share/share.php?url=https%3a%2f%2fukb-neale.gene2pheno.org'); return false;">
+            <a href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fukb-neale.gene2pheno.org">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
               </span>
             </a>
           
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fukb-neale.gene2pheno.org" target="_blank" onclick="trackOutboundLink('https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fukb-neale.gene2pheno.org'); return false;">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fukb-neale.gene2pheno.org">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -166,7 +176,7 @@
         
     </div> <br>
    <div class="copyright">
-        <p> <a class="imlab_link" href="http://hakyimlab.org" target="_blank" onclick="trackOutboundLink('http://hakyimlab.org'); return false;">Im-Lab</a>, Genetic Medicine, Department of Medicine,  The University of Chicago. <a class="back_to_top_link" href="#">Back to top</a> </p>
+        <p> <a class="imlab_link" href="http://hakyimlab.org">Im-Lab</a>, Genetic Medicine, Department of Medicine,  The University of Chicago. <a class="back_to_top_link" href="#">Back to top</a> </p>
    </div>
         <div class="counter">
             <!-- Start of StatCounter Code for Default Guide -->
