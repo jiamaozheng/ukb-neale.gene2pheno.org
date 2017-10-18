@@ -1,4 +1,19 @@
-aws s3 sync ~/Dropbox/Im_lab/2017/PredictDB-Web/UKB_Neale/ukb-neale.gene2pheno.org s3://ukb-neale.gene2pheno.org
+aws s3 sync ~/Dropbox/Im_lab/2017/PredictDB-Web/UKB_Neale/ukb-neale.gene2pheno.org s3://ukb-neale.gene2pheno.org --exlude ".git/*" --exclude ".gitignore" --exclude ".DS_Store" 
 
 aws s3 sync /Volumes/im-lab/nas40t2/rbonazzola/UK_Biobank/UKB_NealeLab/MetaXcan_results_2017_10_11_renamed/* s3://ukb-neale.gene2pheno.org/by-tissue
+
+need to exclude .git .DS_Store, .gitignore, LICENSE, README.md, notes, 
+
+
+aws s3 sync /Volumes/im-lab/nas40t2/rbonazzola/UK_Biobank/UKB_NealeLab/MetaXcan_results_by_phenotype_2017_10_14/* s3://ukb-neale.gene2pheno.org/combined-accross-tissues
+
+
+aws s3 mv s3://imlab-members/jiamao/tweets/ s3://imlab-members/jiamao/ --recursive
+
+
+aws s3 mv s3://gene2pheno/combined-accross-tissues/ s3://gene2pheno/ --recursive
+
+
+.git .DS_Store, .gitignore, LICENSE, README.md, notes, 
+
 

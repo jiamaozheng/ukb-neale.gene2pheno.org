@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>S-PrediXcan associations based on Neale Lab’s UKB GWAS results</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Jiamao Zheng, Hae Kyung Im">
+        <meta name="description" content="S-PrediXcan associations based on Neale Lab’s UKB GWAS results">
+        <link rel="shortcut icon" href="http:/aws.amazon.com/favicon.ico">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/ukb-neale.css">
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"></script>
+        <script src="http://sdk.amazonaws.com/js/aws-sdk-2.0.13.min.js"></script>
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.5.0.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+    </head>
+
+    <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="Nav">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><strong>UKB-NEALE</strong></a>
+          </div>
+          <div class="collapse navbar-collapse btn-group" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"><strong>HOME</strong></a></li>
+                <li><a href="News.html"><strong>NEWS</strong></a></li>
+                <li><a href="FAQ.html"><strong>FAQ</strong></a></li>
+            </ul>
+           </div>
+         </div>
+    </nav>
+
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="page-header">
+            <h1><strong> FAQ </strong><small>Frequently Asked Questions</small></h1>
+        </div>
+        <div class="panel-group" id="accordion">
+                <!-- <div class="faqHeader">General questions</div> -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Q1: How to cite?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p> A: If you use UKB Neale MetaXcan Data in your work please cite: </p>
+                          <p><a href="https://www.biorxiv.org/content/early/2017/10/03/045260">
+                          Integrating tissue specific mechanisms into GWAS summary results.  Alvaro Barbeira, Scott P Dickinson, Jason M Torres, Eric S Torstenson, Jiamao Zheng, Heather E Wheeler, Kaanan P Shah, Todd Edwards, GTEx Consortium, Dan Nicolae, Nancy J Cox, Hae Kyung Im. BioRxiv. 2017. doi: https://doi.org/10.1101/045260.</a></p>              
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Q2: What is content of the <code>.tar.gz</code> files?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p> A: Within each <code>.tar.gz</code> you will find three kinds of files:  </p>
+                          <li> 
+                            Files of the form CODE_PHENOTYPE_TW_TISSUENAME.csv are association results based on GTEx v6p gene expression models.
+                          </li> 
+                          <li> 
+                            The file CODE_PHENOTYPE_DGN-WB.csv contains association results based on gene expression models for whole blood generated with data from the Depression, Genes and Networks (DGN) study.
+                          </li>     
+                          <li> 
+                            Finally, there is a file named CODE_PHENOTYPE_cer_0.01.txt. This one is a meta-analysis across tissues that allows one to quickly identify the genes that might be most relevant for the phenotype of interest.
+                          </li>       
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">Q3: How to uncompress and extract the <code>.tar.gz</code> files?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p> A: This can be accomplished by running the command <code>tar -xzvf filename.tar.gz</code>. </p>  
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Q4: How to download the files?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p> A: In the <a href="index.html">home</a> page, you can explore the AWS S3 bucket containing the S-PrediXcan files. You can insert a pattern in the “Search” box to filter for the files matching that pattern, and download the files by clicking the links individually.</p>
+                          <p>For your convenience, we also provide <a href="https://docs.google.com/spreadsheets/d/1Stlw8_9VYeRNKf9ckMJ7uaH8Sp4G974UuMkr0MLzzsY/edit?usp=sharing">this Google spreadsheet</a>, which contains 1) the UK Biobank codes for the phenotypes, 2) the phenotype description, 3) file prefixes, 4) S3 links for each of the files and 5) wget commands to download them. These fields may be useful for scripting.</p>
+                          <p> For further information on the GWAS on which these results are based, you can consult <a href="https://docs.google.com/spreadsheets/d/1b3oGI2lUt57BcuHttWaZotQcI0-mBRPyZihz87Ms_No/edit?usp=sharing">this spreadsheet </a> published by <a href="http://www.nealelab.is/">Neale Lab</a>. </p>   
+                          <p> In case you prefer to use awscli (AWS command line interface) to download the files, we also provide examples for some common use cases (to install awscli, you can follow the instructions given <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">here</a>. There’s no need to set up credentials, see below NOTE). In all cases, you have to replace `destiny_folder` by the path where you want to download the data to.</p>  
+                          <p> To download the whole bucket (i.e. all the 2419 phenotypes): run <code> aws --no-sign-request --region=us-east-1 s3 cp s3://gene2pheno/ destiny_folder --recursive </code> </p>  
+                          <p> To download all the files with UK Biobank code 20001 (cancer phenotypes): run <code> aws --no-sign-request --region=us-east-1 s3 cp s3://gene2pheno/ destiny_folder --recursive --exclude "*" --include "20001*" </code> </p>
+                          <p> <strong>NOTE</strong>: In general, it’s necessary to have AWS credentials to run <code> aws </code> commands, but the <code>--no-sign-request</code> option tells the CLI not to look for credentials. It works in this case because the AWS S3 bucket is public. </p>    
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+<!-- Bootstrap FAQ - END -->
+    <br><br><br>
+
+      <!-- footer -->
+    <div class="footer" role="contentinfo" id="footer">
+        <div class="social">
+         <br>
+            <span>
+              <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+           
+              <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+           
+              <a href="https://plus.google.com/share?url=https%3A%2F%2Fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+         
+              <a href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            
+              <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            
+              <a href="mailto:haky@uchicago.edu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </span>
+          
+     </div> <br>
+     <div class="copyright">
+          <p> <a class="imlab_link" href="http://hakyimlab.org">Im-Lab</a>, Genetic Medicine, Department of Medicine,  The University of Chicago. <a class="back_to_top_link" href="#">Back to top</a> </p>
+     </div>
+     <div class="counter">
+              <!-- Start of StatCounter Code for Default Guide -->
+              <script type="text/javascript">
+              var sc_project=11470902; 
+              var sc_invisible=0; 
+              var sc_security="907831d2"; 
+              var scJsHost = (("https:" == document.location.protocol) ?
+              "https://secure." : "http://www.");
+              document.write("<sc"+"ript type='text/javascript' src='" +
+              scJsHost+
+              "statcounter.com/counter/counter.js'></"+"script>");
+              </script>
+              <noscript><div class="statcounter"><a title="Web Analytics"
+              href="http://statcounter.com/" target="_blank"><img
+              class="statcounter"
+              src="//c.statcounter.com/11470902/0/907831d2/0/" alt="Web
+              Analytics"></a></div></noscript>
+              <!-- End of StatCounter Code for Default Guide -->
+      </div>
+      <br>
+    </div>
+  </body>
+</html>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61894206-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-61894206-9');
+</script>

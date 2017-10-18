@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>S-PrediXcan associations based on Neale Lab’s UKB GWAS results</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Jiamao Zheng, Hae Kyung Im">
+        <meta name="description" content="S-PrediXcan associations based on Neale Lab’s UKB GWAS results">
+        <link rel="shortcut icon" href="http:/aws.amazon.com/favicon.ico">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/ukb-neale.css">
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"></script>
+        <script src="http://sdk.amazonaws.com/js/aws-sdk-2.0.13.min.js"></script>
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.5.0.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+    </head>
+
+    <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="Nav">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><strong>UKB-NEALE</strong></a>
+          </div>
+          <div class="collapse navbar-collapse btn-group" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"><strong>HOME</strong></a></li>
+                <li><a href="News.html"><strong>NEWS</strong></a></li>
+                <li><a href="FAQ.html"><strong>FAQ</strong></a></li>
+            </ul>
+           </div>
+         </div>
+    </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                    <h1><b>News &amp; Updates</b></h1>
+                        <hr />
+                        <h4>October 15th, 2017</h4>
+                        <h3> <a href="http://hakyimlab.org/post/ubk-neale-predixcan-release/">We are releasing all PrediXcan associations based on Neale Lab's UKB rapid GWAS results</a> </h3>
+                      <p>
+                     As many of you may know, Neale Lab made a big splash in the GWAS community by releasing the summary results of 2400+ phenotypes from the UK Biobank. Following their lead on open science and open data sharing, we are releasing the bulk runs of PrediXcan association based on Neale Lab’s UKB results and 44 tissues models from GTEx V6p release.  
+                      </p> <a class="btn btn btn-primary" style="background-color: #3E7495" href="http://hakyimlab.org/post/ubk-neale-predixcan-release/"><span class="lead"> Read More &rarr; </span> </a>
+                </div>
+            </div>
+        </div>
+      <br><br><br>
+      <!-- footer -->
+    <div class="footer" role="contentinfo" id="footer">
+        <div class="social">
+         <br>
+            <span>
+              <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+           
+              <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+           
+              <a href="https://plus.google.com/share?url=https%3A%2F%2Fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+         
+              <a href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            
+              <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fukb-neale.gene2pheno.org">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            
+              <a href="mailto:haky@uchicago.edu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </span>
+          
+     </div> <br>
+     <div class="copyright">
+          <p> <a class="imlab_link" href="http://hakyimlab.org">Im-Lab</a>, Genetic Medicine, Department of Medicine,  The University of Chicago. <a class="back_to_top_link" href="#">Back to top</a> </p>
+     </div>
+     <div class="counter">
+              <!-- Start of StatCounter Code for Default Guide -->
+              <script type="text/javascript">
+              var sc_project=11470902; 
+              var sc_invisible=0; 
+              var sc_security="907831d2"; 
+              var scJsHost = (("https:" == document.location.protocol) ?
+              "https://secure." : "http://www.");
+              document.write("<sc"+"ript type='text/javascript' src='" +
+              scJsHost+
+              "statcounter.com/counter/counter.js'></"+"script>");
+              </script>
+              <noscript><div class="statcounter"><a title="Web Analytics"
+              href="http://statcounter.com/" target="_blank"><img
+              class="statcounter"
+              src="//c.statcounter.com/11470902/0/907831d2/0/" alt="Web
+              Analytics"></a></div></noscript>
+              <!-- End of StatCounter Code for Default Guide -->
+      </div>
+      <br>
+    </div>
+  </body>
+</html>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61894206-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-61894206-9');
+</script>
